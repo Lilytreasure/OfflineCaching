@@ -1,6 +1,9 @@
 package com.example.datacach.di
 
+import android.app.Application
+import androidx.room.Room
 import com.example.datacach.api.QuotesListApi
+import com.example.datacach.data.QuotesDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,6 +28,12 @@ object AppModule {
     @Singleton
     fun provideQuoteListAPI(retrofit: Retrofit): QuotesListApi =
         retrofit.create(QuotesListApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideDatabase(app: Application): QuotesDatabase=
+        Room.databaseBuilder(app,QuotesDatabase::class.java, name = "quotes_database")
+            .build()
 
 
 }

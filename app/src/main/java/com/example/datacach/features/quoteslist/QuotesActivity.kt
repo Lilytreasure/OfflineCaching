@@ -14,6 +14,11 @@ class QuotesActivity : AppCompatActivity() {
 
     //implementation off offline data caching in mvvm model
     //Dependency injection
+    //Todo--Offline data caching
+    //Todo--Refactor the layout and add like button functionalities
+    //Todo --Populating common likes in Firebase
+    //Todo --Fetch images from an api to show alongside the quotes holder
+    //Todo --Search the fetched data
 
     //Reference to the viewModel
     private val viewModel: QuotesViewModel by viewModels()
@@ -41,14 +46,24 @@ class QuotesActivity : AppCompatActivity() {
             viewModel.quotes.observe(this@QuotesActivity) { quotes ->
                 quotesAdapter.submitList(quotes)
 
-
             }
 
         }
 
 
+
+
+
         //End of onCreate Method
     }
+
+    //catch errors to prevent thea app from crashing and log errors to the user
+    //add a  network manager to notify  the user when connection is lost
+    // add a view to alert the user when connection is lost
+    //Hide the connection notifier when connection resumes
+    // add a progress bar that is dispatched when data is loaded
+
+
 
 }
 

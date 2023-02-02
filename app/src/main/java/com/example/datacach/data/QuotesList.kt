@@ -1,7 +1,12 @@
 package com.example.datacach.data
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "quotes")
 data class QuotesList(
     val text: String,
-    val author: String
+    @PrimaryKey val author: String
 
 )
+
