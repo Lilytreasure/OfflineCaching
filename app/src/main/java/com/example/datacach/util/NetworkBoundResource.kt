@@ -4,6 +4,7 @@ import kotlinx.coroutines.flow.*
 
 inline fun <ResultType, RequestType >networkBoundResource(
     //getting data from the database
+  //Flow  will keep emitting data
    crossinline query:()-> Flow<ResultType>,
   crossinline fetch: suspend ()-> RequestType,
     // Saving data to SQl Lite database

@@ -7,5 +7,4 @@ abstract class QuotesDatabase :RoomDatabase() {
 
     abstract  fun quotesDao(): QuotesDao
 
-
 }

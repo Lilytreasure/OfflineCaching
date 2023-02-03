@@ -10,5 +10,4 @@ sealed class Resource<T> (
 
 
 
-
 }
